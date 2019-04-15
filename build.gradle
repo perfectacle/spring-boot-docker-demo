@@ -18,7 +18,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'io.projectreactor:reactor-test'
-    implementation 'org.modelmapper:modelmapper:2.3.3'
+    implementation 'org.modelmapper:modelmapper:2.3.2'
 }
 
 task moveLib {
