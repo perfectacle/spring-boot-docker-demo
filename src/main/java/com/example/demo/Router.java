@@ -17,6 +17,6 @@ public class Router {
         return RouterFunctions.route(GET(""),
                                      serverRequest -> ServerResponse.ok()
                                                                     .contentType(MediaType.TEXT_PLAIN)
-                                                                    .body(BodyInserters.fromObject("ok!!")));
+                                                                    .body(BodyInserters.fromObject("ok!!!!")));
     }
 }
