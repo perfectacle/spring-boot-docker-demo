@@ -20,12 +20,21 @@ dependencies {
     testImplementation 'io.projectreactor:reactor-test'
 }
 
+task moveLib {
+    doLast {
+        def unpackDir = "$buildDir/unpack"
+        ant.move(file: "${unpackDir}/app/BOOT-INF/lib", toFile: "${unpackDir}/lib")
+    }
+}
+
 task unpackJar(type: Copy) {
     def unpackDir = "$buildDir/unpack"
 
     delete unpackDir
     from zipTree(jar.getArchiveFile())
-    into unpackDir
+    into "$unpackDir/app"
+
+    finalizedBy moveLib
 }
 
 build {

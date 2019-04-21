@@ -7,7 +7,7 @@
 ### Docker Image
 ```bash
 # docker build -t ${imageName}:${tagName} .docker build -t ${imageName}:${tagName} .
-docker build -t perfectacle/spring-boot-demo:unpack-jar-launcher .
+docker build -t perfectacle/spring-boot-demo:unpack-jar-launcher-decrease-layer .
 ```
 
 ## Run
@@ -19,7 +19,7 @@ docker build -t perfectacle/spring-boot-demo:unpack-jar-launcher .
 ### Docker Container
 ```bash
 # docker run --rm -d -p ${hostPort}:${containerPort} --name ${containerName} ${imageName}:${tagName}
-docker run --rm -d -p 80:8080 --name demo perfectacle/spring-boot-demo:unpack-jar-launcher
+docker run --rm -d -p 80:8080 --name demo perfectacle/spring-boot-demo:unpack-jar-launcher-decrease-layer
 ```
 
 ## Test
@@ -41,5 +41,5 @@ curl localhost
 ### Docker Image
 ```bash
 # docker push ${repositoryName}:${tagName}
-docker push perfectacle/spring-boot-demo:unpack-jar-launcher
+docker push perfectacle/spring-boot-demo:unpack-jar-launcher-decrease-layer
 ```

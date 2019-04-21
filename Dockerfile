@@ -4,9 +4,7 @@ WORKDIR /root
 
 ARG buildDir=build/unpack
 
-COPY ${buildDir}/BOOT-INF/classes/ BOOT-INF/classes
-COPY ${buildDir}/BOOT-INF/lib/ BOOT-INF/lib
-COPY ${buildDir}/META-INF META-INF
-COPY ${buildDir}/org org
+COPY ${buildDir}/app .
+COPY ${buildDir}/lib BOOT-INF/lib
 
 CMD java org.springframework.boot.loader.JarLauncher
