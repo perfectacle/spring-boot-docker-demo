@@ -2,6 +2,9 @@ FROM openjdk:11-jre-slim
 
 WORKDIR /root
 
-COPY build/libs/demo-0.0.1-SNAPSHOT.jar .
+ARG buildDir=build/unpack
 
-CMD java -jar demo-0.0.1-SNAPSHOT.jar
+COPY ${buildDir}/BOOT-INF/classes/ app
+COPY ${buildDir}/BOOT-INF/lib/ lib
+
+CMD java -cp app:lib/* com.example.demo.DemoApplication

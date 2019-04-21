@@ -19,3 +19,15 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'io.projectreactor:reactor-test'
 }
+
+task unpackJar(type: Copy) {
+    def unpackDir = "$buildDir/unpack"
+
+    delete unpackDir
+    from zipTree(jar.getArchiveFile())
+    into unpackDir
+}
+
+build {
+    finalizedBy unpackJar
+}
